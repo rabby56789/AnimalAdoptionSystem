@@ -1,5 +1,4 @@
-
-	//載入Json
+   //載入Json
     let requestURL = 'https://next.json-generator.com/api/json/get/NylHyKeopP';
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
