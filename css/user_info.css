@@ -1,0 +1,23 @@
+
+body {
+  margin: 0;
+  background-color: #ff7d89;
+  font-family: Arial, Helvetica, sans-serif, Microsoft YaHei, Microsoft JhengHei, '微軟雅黑體', '微軟正黑體', '黑體';
+}
+
+.context {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+}
+
+.title {
+  font-size: 3vw;
+  padding: 1vw 0px;
+}
+
+p {
+  font-size: 2vw;
+  padding: 0px;
+  margin: 0;
+}
