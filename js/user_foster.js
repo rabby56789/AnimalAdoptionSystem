@@ -1,51 +1,56 @@
-var requestURL ='https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-request.onload = function() {
-  var superHeroes = request.response;
-  populateHeader(superHeroes);
-  showHeroes(superHeroes);
-}
-function populateHeader(jsonObj) {
-  var myH1 = document.createElement('h1');
-  myH1.textContent = jsonObj['squadName'];
-  header.appendChild(myH1);
 
-  var myPara = document.createElement('p');
-  myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
-  header.appendChild(myPara);
-}
-function showHeroes(jsonObj) {
-  var heroes = jsonObj['members'];
-      
-  for(i = 0; i < heroes.length; i++) {
-    var myArticle = document.createElement('article');
-    var myH2 = document.createElement('h2');
-    var myPara1 = document.createElement('p');
-    var myPara2 = document.createElement('p');
-    var myPara3 = document.createElement('p');
-    var myList = document.createElement('ul');
-
-    myH2.textContent = heroes[i].name;
-    myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-    myPara2.textContent = 'Age: ' + heroes[i].age;
-    myPara3.textContent = 'Superpowers:';
-        
-    var superPowers = heroes[i].powers;
-    for(j = 0; j < superPowers.length; j++) {
-      var listItem = document.createElement('li');
-      listItem.textContent = superPowers[j];
-      myList.appendChild(listItem);
+	//載入Json
+    let requestURL = 'https://next.json-generator.com/api/json/get/NylHyKeopP';
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+      const pets = request.response;
+      showpet(pets);
     }
+	//顯示送養動物資料
+    function showpet(jsonObj) {
+	var newDiv=document.createElement('div');
+	newDiv.setAttribute("class","a_animal")
+	  
+	var info=document.createElement('a');
+	info.setAttribute("href","animal_info.html");
+	var pic=document.createElement('img')
+	pic.setAttribute("src",jsonObj['img_file']);
+	pic.setAttribute("alt","no image");
+	pic.setAttribute("onerror","this.src='ui_img/no_image.png'");
+	info.appendChild(pic);
+	newDiv.appendChild(info);
+	  
+    var pet_name = document.createElement('p');
+    pet_name.innerHTML ='動物:' + jsonObj['pet_name'];
+	  
+	var gender = document.createElement('p');
+    gender.innerHTML ='性別:' + jsonObj['gender'];
+	  
+	var area = document.createElement('p');
+    area.innerHTML ='地區:' + jsonObj['area'];
+	  
+	var isAdopted = document.createElement('p');
+    isAdopted.innerHTML ='是否可領養:' + jsonObj['isAdopted'];
+	  
+    newDiv.appendChild(pet_name);
+	newDiv.appendChild(gender);
+	newDiv.appendChild(area);
+	newDiv.appendChild(isAdopted);
+	  
+	var newbtn1=document.createElement('button');
+	newbtn1.setAttribute("type","button")
+	newbtn1.innerHTML='修改';
+	  
+	var newbtn2=document.createElement('button');
+	newbtn2.setAttribute("type","button")
 
-    myArticle.appendChild(myH2);
-    myArticle.appendChild(myPara1);
-    myArticle.appendChild(myPara2);
-    myArticle.appendChild(myPara3);
-    myArticle.appendChild(myList);
-
-    section.appendChild(myArticle);
-  }
-}
+	newbtn2.innerHTML='刪除';
+	  
+	newDiv.appendChild(newbtn1);
+	newDiv.appendChild(newbtn2);
+      
+	document.getElementById("pet_list").appendChild(newDiv);
+    }
