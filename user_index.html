@@ -3,9 +3,9 @@
 <html lang="zh-TW" dir="ltr">
 	<head>
 		<meta charset = "utf-8">
-		<title>首頁--動物認養系統</title>
+		<title>個人頁面--動物認養系統</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/user_index.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 		</script>
@@ -16,23 +16,8 @@
 		  	<h2>Logo</h2>
 		  </div>
 		  <div class="header_right">
-		  	<button onclick="document.getElementById('login').style.display='block'" style="width:auto;">登入</button>
+		  	<h3>hi, <a href="user_index.html">user</a></h3>
 		  </div>
-		</div>
-
-		<div id="login" class="modal">
-		  <form class="modal-content animate" action="/action_page.php" method="post">
-		    <div class="imgcontainer">
-		      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
-		    </div>
-		    <div class="container">
-		      <label for="uname"><b>Username</b></label>
-		      <input type="text" placeholder="Enter Username" name="uname" required>
-		      <label for="psw"><b>Password</b></label>
-		      <input type="password" placeholder="Enter Password" name="psw" required>
-		      <button type="submit" >Login</button>
-		    </div>
-		  </form>
 		</div>
 
 		<div id="navbar" class="navbar">
@@ -42,21 +27,29 @@
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>
 		</div>
+		
+		<div class="content">
+			<ul id="tabs" class="tabs">
+			    <li><div class="active" name="user_foster.html">送養</div></li>
+			    <li><div href="#" name="user_adoption.html">認養</div></li>
+			    <li><div href="#" name="user_receive.html">收信夾</div></li>
+			    <li><div href="#" name="user_second_hand.html">二手用品</div></li>
+			    <span><li><div href="#" name="user_info.html">個人資料</div></li></span>
+			</ul>
+			<div id="content">
+				<iframe src="user_foster.html"></iframe>
+			</div>
+		</div>
 
 		<script>
-		// Get the modal
-		var modal = document.getElementById('login');
-
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-		    if (event.target == modal) {
-		        modal.style.display = "none";
-		    }
-		}
-
 		$(".navbar a").click(function(){
 			$(".navbar a").removeClass("active");
 			$(this).addClass("active");
+		});
+		$(".tabs li div").click(function(){
+			$(".tabs li div").removeClass("active");
+			$(this).addClass("active");
+			$(".content iframe").attr('src', $(this).attr("name"));
 		});
 		window.onscroll = function() {myFunction()};
 
