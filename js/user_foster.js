@@ -45,7 +45,6 @@
 	  
 	var newbtn2=document.createElement('button');
 	newbtn2.setAttribute("type","button")
-
 	newbtn2.innerHTML='刪除';
 	  
 	newDiv.appendChild(newbtn1);

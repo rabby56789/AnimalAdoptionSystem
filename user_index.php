@@ -16,12 +16,12 @@
 		  	<h2>Logo</h2>
 		  </div>
 		  <div class="header_right">
-		  	<h3>hi, <a href="user_index.html">user</a></h3>
+		  	<h3>hi, <a href="user_index.php">user</a></h3>
 		  </div>
 		</div>
 
 		<div id="navbar" class="navbar">
-		  <a class="active" href="index.html">首頁</a>
+		  <a class="active" href="index.php">首頁</a>
 		  <a href="#">個人認養</a>
 		  <a href="#">機構認養</a>
 		  <a href="#">遺失協尋</a>
@@ -30,15 +30,15 @@
 		
 		<div class="content">
 			<ul id="tabs" class="tabs">
-			    <li><div class="active" name="user_foster.html">送養</div></li>
+			    <li><div class="active" name="user_foster.php">送養</div></li>
 			    <li><div href="#" name="user_adoption.html">認養</div></li>
 			    <li><div href="#" name="user_receive.html">收信夾</div></li>
 			    <li><div href="#" name="user_second_hand.html">二手用品</div></li>
-			    <span><li><div href="#" name="user_info.html">個人資料</div></li></span>
+			    <span><li><div href="#" name="user_info.php">個人資料</div></li></span>
 				
 			</ul>
 			<div id="content">
-				<iframe src="user_foster.html"></iframe>
+				<iframe src="user_foster.php"></iframe>
 			</div>
 		</div>
 

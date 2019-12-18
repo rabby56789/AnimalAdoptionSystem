@@ -36,7 +36,7 @@
 		</div>
 
 		<div id="navbar" class="navbar">
-		  <a class="active" href="index.html">首頁</a>
+		  <a class="active" href="index.php">首頁</a>
 		  <a href="#">個人認養</a>
 		  <a href="#">機構認養</a>
 		  <a href="#">遺失協尋</a>
