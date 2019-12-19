@@ -15,8 +15,6 @@ $bulk->insert(['user_name' => $_SESSION['user_name'],//使用者登陸後儲存�
 			   ]);
 $manager->executeBulkWrite('mydb.Opet', $bulk);//$manager->executeBulkWrite('寫入db.寫入資料表', $前面設的寫入變數);
 
-echo "<script type='text/javascript'>";
-echo "window.location.href='user_foster.php";
-echo "</script>";
+echo '<script>location.replace("user_foster.php");</script>';
 
 ?>
