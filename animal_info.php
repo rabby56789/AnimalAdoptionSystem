@@ -14,7 +14,7 @@
 		<button class="back" onclick="javascript:history.back()">返回</button>
 		<div class="context">
 			<div class="title">動物基本資料</div>
-			<p>是否開放認養:<?php print_r($isAdopted)?></p><br>
+			<p>是否開放認養:<?php print_r($doc['isAdopted'])?></p><br>
 			<p>動物類別:<?php print_r($doc['pet_type'])?></p><br>
 			<p>動物品種:<?php print_r($doc['pet_name'])?></p><br>
 			<p>動物性別:<?php print_r($doc['gender'])?></p><br>

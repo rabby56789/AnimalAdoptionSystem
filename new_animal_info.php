@@ -51,7 +51,7 @@
 			<p>病例: <input type="text" name="case"></p><br>
 			<p>晶片號碼: <input type="text" name="chip_no"></p><br>
 			<p>認養條件: <input type="text" name="condition"></p><br>
-			<p>是否開放送養：<input type="radio" value=True name="isAdopted">是<input type="radio" value=False name="isAdopted">否<br>
+			<p>是否開放送養：<input type="radio" value="是" name="isAdopted" required>是<input type="radio" value="否" name="isAdopted">否<br>
 			<button>送出</button>
 			</form>
 		</div>

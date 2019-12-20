@@ -10,13 +10,13 @@ $cursor = $manager->executeQuery('mydb.Opet', $query);//設定指標變數:查�
 foreach ($cursor as $document) {
 	//設定$doc為陣列才能一一顯示值
 	$doc = (array)$document;
-	if($doc['isAdopted']==True)
+	/*if($doc['isAdopted']==True)
 	{
 		$isAdopted="是";
 	}
 	else
 		$isAdopted="否";
-	 //var_dump($document);
+	 //var_dump($document);*/
 }
 
 

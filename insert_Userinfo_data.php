@@ -17,5 +17,6 @@ $bulk->insert(['user_name' => $_POST['user_name'],//使用者登陸後儲存使�
 			   ]);
 $manager->executeBulkWrite('mydb.Userinfo', $bulk);//$manager->executeBulkWrite('寫入db.寫入資料表', $前面設的寫入變數);
 
-
+echo '<script>alert("註冊成功");</script>';
+header("refresh:0;url=index.php");
 ?>
