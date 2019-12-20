@@ -11,7 +11,8 @@ $bulk->insert(['user_name' => $_SESSION['user_name'],//使用者登陸後儲存�
 			   'case' => $_POST['case'],
 			   'chip_no' => $_POST['chip_no'],
 			   'condition' => $_POST['condition'],
-			   'isAdopted' => $_POST['isAdopted']
+			   'isAdopted' => $_POST['isAdopted'],
+			   'adopted' => "False",
 			   ]);
 $manager->executeBulkWrite('mydb.Opet', $bulk);//$manager->executeBulkWrite('寫入db.寫入資料表', $前面設的寫入變數);
 

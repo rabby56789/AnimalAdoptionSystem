@@ -1,16 +1,10 @@
 <?php
-session_start();
+//session_start();
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");//設定連線
-$filter = ['user_name' => ['$eq' => $_SESSION['user_name']]];//查詢條件
+$filter = ['user_name' => ['$eq' => $_SESSION['user_name']],'adopted' => "True"];//查詢條件
 $query = new MongoDB\Driver\Query($filter);//設定查詢變數
 $cursor = $manager->executeQuery('mydb.Opet', $query);//設定指標變數:查詢變數指向哪個db哪個collection
-//顯示資料
 
-/*function del(){
-		$bulk = new MongoDB\Driver\BulkWrite; //設定寫入變數
-		$bulk->delete(['_id' => ['$eq' => new MongoDB\BSON\ObjectId("$ID")]]);//寫入資料設定	   
-		$manager->executeBulkWrite('mydb.Opet', $bulk);//$manager->executeBulkWrite('寫入db.寫入資料表', $前面設的寫入變數);
-	}*/
 foreach ($cursor as $document) {
 	//設定$doc為陣列才能一一顯示值
 	$doc = (array)$document;
@@ -24,21 +18,15 @@ foreach ($cursor as $document) {
 	
 	
 	echo '<div class="a_animal">';
-	echo	'<a href="delete_Opet_data.php?_id=';print_r($ID);echo '"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
+	echo	'<a href="animal_info.php?_id=';print_r($ID);echo '"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
 	//echo	'<a href="query_Petinfo_data.php?_id=5df8d4b4df3c00008c0063d3"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
 	echo	'<p id="pet_id">類別：';print_r($doc['pet_type']);echo'</p>';
 	echo	'<p>品種：';print_r($doc['pet_name']);echo'</p>';
 	echo	'<p>地區：';print_r($doc['area']);echo'</p>';
 	echo	'<p>是否開放認養：';print_r($isAdopted);echo'</p>';
 	//echo	'<p>_ID：';print_r($doc['_id']);echo'</p>';
-	echo	'<button type="button">修改</button>
-			 <button type="button" onclick="location.href=';echo '\'';echo 'delete_Opet_data.php?_id=';print_r($ID);echo '\'">刪除</button>
+	echo	'<button type="button" onclick="location.href=';echo '\'';echo 'return_Opet_data.php?_id=';print_r($ID);echo '\'">回復</button>
 		  </div>';
-	
-
-	/*echo	'<button type="button">修改</button>
-			 <button type="button" onclick=del>刪除</button>
-		  </div>';	*/
 }
 
 ?>
