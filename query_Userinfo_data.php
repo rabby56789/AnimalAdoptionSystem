@@ -1,7 +1,7 @@
 <?php
 session_start();
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");//設定連線
-$filter = ['user_name' => ['$eq' => $_SESSION['user_name']]];//查詢條件
+$filter = ['account' => ['$eq' => $_SESSION['account']]];//查詢條件
 $query = new MongoDB\Driver\Query($filter);//設定查詢變數
 $cursor = $manager->executeQuery('mydb.Userinfo', $query);//設定指標變數:查詢變數指向哪個db哪個collection
 //顯示資料

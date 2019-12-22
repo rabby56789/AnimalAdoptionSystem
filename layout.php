@@ -4,7 +4,7 @@
 		<meta charset = "utf-8">
 		<title>首頁--動物認養系統</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/index.css">
+		//<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 		</script>
@@ -44,9 +44,6 @@
 		  </form>
 		</div>
 		</div>
-
-		
-
 		<div id="navbar" class="navbar">
 		  <a class="active" href="index.php">首頁</a>
 		  <a href="Opet_search.php">個人認養</a>
@@ -54,34 +51,3 @@
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>
 		</div>
-
-		<script>
-		// Get the modal
-		var modal = document.getElementById('login');
-
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-		    if (event.target == modal) {
-		        modal.style.display = "none";
-		    }
-		}
-
-		$(".navbar a").click(function(){
-			$(".navbar a").removeClass("active");
-			$(this).addClass("active");
-		});
-		window.onscroll = function() {myFunction()};
-
-		var navbar = document.getElementById("navbar");
-		var sticky = navbar.offsetTop;
-
-		function myFunction() {
-		  if (window.pageYOffset >= sticky) {
-		    navbar.classList.add("sticky")
-		  } else {
-		    navbar.classList.remove("sticky");
-		  }
-		}
-		</script>
-	</body>
-</html>

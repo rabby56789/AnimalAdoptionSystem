@@ -13,16 +13,21 @@
 	<body>
 		<button class="back" onclick="javascript:history.back()">返回</button>
 		<div class="context">
-			<form action="insert_Opet_data.php" method="post">
+			<form action="insert_Opet_data.php" enctype="multipart/form-data" method="post">
 				
 			<div class="title">動物基本資料</div>
-			<p>動物類別: <input type="text" name="pet_type" required></p><br>
+			<p>動物類別: <select name="pet_type">
+						 <option value="狗">狗</option>
+						 <option value="貓">貓</option>
+						 <option value="倉鼠">倉鼠</option>
+						 <option value="鳥類">鳥類</option>
+						 <option value="其他">其他</option>
+						 </select></p><br>
 			<p>動物品種: <input type="text" name="pet_name" required></p><br>
-			<p>動物性別:<select name="gender">
-　						<option value="男">男</option>
-　						<option value="女">女</option>
-　						<option value="無法告知">無法告知</option>
-						</select></p><br>
+			<p>動物性別:<input type="radio" value="男" name="gender" checked>男
+						<input type="radio" value="女" name="gender">女
+						<input type="radio" value="無法告知" name="gender">無法告知
+						</p><br>
 			<p>動物年齡: <input type="text" name="pet_old"></p><br>
 			<p>地區:<select name="area">
 					<option value="基隆市">基隆市</option>
@@ -52,6 +57,7 @@
 			<p>晶片號碼: <input type="text" name="chip_no"></p><br>
 			<p>認養條件: <input type="text" name="condition"></p><br>
 			<p>是否開放送養：<input type="radio" value="是" name="isAdopted" required>是<input type="radio" value="否" name="isAdopted">否<br>
+			<input name="img" size="35" type="file" required><br/>
 			<button>送出</button>
 			</form>
 		</div>

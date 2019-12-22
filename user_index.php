@@ -16,13 +16,13 @@
 		  	<h2>Logo</h2>
 		  </div>
 		  <div class="header_right">
-		  	<h3>hi, <a href="user_index.php">user</a></h3>
+		  	<h3>hi, <a href="user_index.php"><?php session_start();print_r($_SESSION['user_name']);?></a></h3>
 		  </div>
 		</div>
 
 		<div id="navbar" class="navbar">
 		  <a class="active" href="index.php">首頁</a>
-		  <a href="#">個人認養</a>
+		  <a href="Opet_search.php">個人認養</a>
 		  <a href="#">機構認養</a>
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>

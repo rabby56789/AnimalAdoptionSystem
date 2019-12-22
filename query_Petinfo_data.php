@@ -1,5 +1,4 @@
 <?php
-
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");//設定連線
 $mongoid=$_GET['_id'];
 $filter = ['_id' => ['$eq' => new MongoDB\BSON\ObjectId("$mongoid")]];//查詢條件
