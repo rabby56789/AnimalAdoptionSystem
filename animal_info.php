@@ -24,5 +24,11 @@
 			<p>晶片號碼:<?php print_r($doc['chip_no'])?></p><br>
 			<p>認養條件:<?php print_r($doc['condition'])?></p><br>
 		</div>
+		
+		<script>
+			function back() {
+				window.history.back();
+			}
+		</script>
 	</body>
 </html>

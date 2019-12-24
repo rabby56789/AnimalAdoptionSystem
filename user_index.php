@@ -13,7 +13,7 @@
 	<body>
 		<div class="header">
 		  <div class="header_left">
-		  	<h2>Logo</h2>
+		  	<h2>動物認養系統</h2>
 		  </div>
 		  <div class="header_right">
 		  	<h3>hi, <a href="user_index.php"><?php session_start();print_r($_SESSION['user_name']);?></a></h3>
@@ -22,7 +22,7 @@
 
 		<div id="navbar" class="navbar">
 		  <a class="active" href="index.php">首頁</a>
-		  <a href="Opet_search.php">個人認養</a>
+		  <a href="person_adoption.php">個人認養</a>
 		  <a href="#">機構認養</a>
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>
@@ -31,11 +31,10 @@
 		<div class="content">
 			<ul id="tabs" class="tabs">
 			    <li><div class="active" name="user_foster.php">送養</div></li>
-			    <li><div href="#" name="user_adoption.html">認養</div></li>
-			    <li><div href="#" name="user_receive.html">收信夾</div></li>
-			    <li><div href="#" name="user_second_hand.html">二手用品</div></li>
-			    <span><li><div href="#" name="user_info.php">個人資料</div></li></span>
-				
+			    <li><div href="#" name="user_adoption.php">認養</div></li>
+			    <li><div href="#" name="user_receive.php">收信夾</div></li>
+			    <li><div href="#" name="user_second_hand.php">二手用品</div></li>
+			    <span><li><div href="#" name="user_info.php">個人資料</div></li></span>	
 			</ul>
 			<div id="content">
 				<iframe src="user_foster.php"></iframe>
@@ -64,7 +63,6 @@
 		    navbar.classList.remove("sticky");
 		  }
 		}
-		</script>
-		
+		</script>	
 	</body>
 </html>

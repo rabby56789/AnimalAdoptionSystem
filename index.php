@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW" dir="ltr">
 	<head>
 		<meta charset = "utf-8">
@@ -12,7 +13,7 @@
 	<body>
 		<div class="header">
 		  <div class="header_left">
-		  	<h2>Logo</h2>
+		  	<h2>動物認養系統</h2>
 		  </div>
 		  <?php 
 		  session_start();
@@ -49,7 +50,7 @@
 
 		<div id="navbar" class="navbar">
 		  <a class="active" href="index.php">首頁</a>
-		  <a href="Opet_search.php">個人認養</a>
+		  <a href="person_adoption.php">個人認養</a>
 		  <a href="#">機構認養</a>
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>
