@@ -11,6 +11,17 @@ body {
   top: 10%;
 }
 
+.back {
+  background-color: #6effc4;
+  color: black;
+  padding: 0.5vw;
+  margin: 0.5vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 5vw;
+}
+
 .title {
   font-size: 3vw;
   padding: 1vw 0px;
@@ -20,4 +31,15 @@ p {
   font-size: 2vw;
   padding: 0px;
   margin: 0;
+}
+
+button{
+  background-color: #6effc4;
+  color: black;
+  padding: 0.5vw;
+  margin: 0.5vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 5vw;
 }
