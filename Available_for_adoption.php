@@ -1,6 +1,6 @@
 <?php
 session_start();
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");//設定連線
+$manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");//設定連線
 $filter = ['account' => ['$eq' => $_SESSION['account']],'adopted' => "False"];//查詢條件
 $options = ['sort' =>['add_time' => -1],];//排順序先PO的先上
 $query = new MongoDB\Driver\Query($filter,$options);//設定查詢變數

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+$manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");
 $filter = ['account' => ['$eq' => $_POST['account']],'psd' => ['$eq' => $_POST['psd']]];
 $query = new MongoDB\Driver\Query($filter);
 $cursor = $manager->executeQuery('mydb.Userinfo', $query);
@@ -19,11 +19,12 @@ if($a==false)
 	$_SESSION['user_name']=$doc['user_name'];
 	
 	print_r($_SESSION['user_name']);
-	header("refresh:0;url=index.php");
+	//header("refresh:0;url=index.php");
 }
 else
 {
-	print_r("帳號或密碼錯誤");
+	echo '<script>alert("帳號或密碼錯誤");</script>';
+	//print_r("帳號或密碼錯誤");
 }
-
+header("refresh:0;url=index.php");
 

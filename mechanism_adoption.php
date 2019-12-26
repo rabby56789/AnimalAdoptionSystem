@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<?php //session_start();
-$_SESSION['count']=0;?>
+
 <html lang="zh-TW" dir="ltr">
 	<head>
 		<meta charset = "utf-8">
-		<title>個人認養--動物認養系統</title>
+		<title>機構認養--動物認養系統</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/person_adoption.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,8 +48,8 @@ $_SESSION['count']=0;?>
 		
 		<div id="navbar" class="navbar">
 		  <a href="index.php">首頁</a>
-		  <a class="active" href="person_adoption.php">個人認養</a>
-		  <a href="mechanism_adoption.php">機構認養</a>
+		  <a href="person_adoption.php">個人認養</a>
+		  <a class="active" href="#">機構認養</a>
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>
 		</div>
@@ -58,45 +57,51 @@ $_SESSION['count']=0;?>
 		<div id="mySidenav" class="sidenav">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
 		  <div>
-			<form action="person_adoption.php" method="post">	
+			<form action="mechanism_adoption.php" method="post">	
 			
 			<p>性別：<input type="radio" value="*" name="gender" checked>不拘
-					 <input type="radio" value="男" name="gender" checked>男
-					 <input type="radio" value="女" name="gender">女
+					 <input type="radio" value="M" name="gender" checked>男
+					 <input type="radio" value="F" name="gender">女
 					 <input type="radio" value="無法告知" name="gender">無法告知</p><br>
 			<p>動物類別: <select name="pet_type">
 						 <option value="*">全選</option>
 						 <option value="狗">狗</option>
 						 <option value="貓">貓</option>
-						 <option value="倉鼠">倉鼠</option>
-						 <option value="鳥類">鳥類</option>
-						 <option value="其他">其他</option>
 						 </select></p><br>
-			<p>動物品種: <input type="text" name="pet_name"></p><br>
+			<p>動物顏色: <input type="text" name="pet_name"></p><br>
 			<p>地區:<select name="area">
 					<option value="*">全選</option>
-					<option value="基隆市">基隆市</option>
-					<option value="台北市">台北市</option>
-					<option value="新北市">新北市</option>
-					<option value="桃園市">桃園市</option>
-					<option value="新竹市">新竹市</option>
-					<option value="新竹縣">新竹縣</option>
-					<option value="苗栗縣">苗栗縣</option>
-					<option value="台中市">台中市</option>
-					<option value="彰化縣">彰化縣</option>
-					<option value="南投縣">南投縣</option>
-					<option value="雲林縣">雲林縣</option>
-					<option value="嘉義市">嘉義市</option>
-					<option value="嘉義縣">嘉義縣</option>
-					<option value="台南市">台南市</option>
-					<option value="高雄市">高雄市</option>
-					<option value="屏東縣">屏東縣</option>
-					<option value="台東縣">台東縣</option>
-					<option value="花蓮縣">花蓮縣</option>
-					<option value="宜蘭縣">宜蘭縣</option>
-					<option value="澎湖縣">澎湖縣</option>
-					<option value="金門縣">金門縣</option>
-					<option value="連江縣">連江縣</option>
+					<option value="新北市板橋區公立動物之家">新北市板橋區公立動物之家</option>
+					<option value="新北市新店區公立動物之家">新北市新店區公立動物之家</option>
+					<option value="新北市中和區公立動物之家">新北市中和區公立動物之家</option>
+					<option value="新北市淡水區公立動物之家">新北市淡水區公立動物之家</option>
+					<option value="新北市瑞芳區公立動物之家">新北市瑞芳區公立動物之家</option>
+					<option value="新北市五股區公立動物之家">新北市五股區公立動物之家</option>
+					<option value="新北市八里區公立動物之家">新北市八里區公立動物之家</option>
+					<option value="新北市三芝區公立動物之家">新北市三芝區公立動物之家</option>
+					<option value="臺北市動物之家">臺北市動物之家</option>
+					<option value="臺中市動物之家南屯園區">臺中市動物之家南屯園區</option>
+					<option value="臺南市動物之家灣裡站">臺南市動物之家灣裡站</option>
+					<option value="臺南市動物之家善化站">臺南市動物之家善化站</option>
+					<option value="高雄市壽山動物保護教育園區">高雄市壽山動物保護教育園區</option>
+					<option value="高雄市燕巢動物保護關愛園區">高雄市燕巢動物保護關愛園區</option>
+					<option value="桃園市動物保護教育園區">桃園市動物保護教育園區</option>
+					<option value="新竹縣公立動物收容所	">新竹縣公立動物收容所	</option>
+					<option value="新竹市動物保護教育園區">新竹市動物保護教育園區</option>
+					<option value="苗栗縣生態保育教育中心(動物收容所)">苗栗縣生態保育教育中心(動物收容所)</option>
+					<option value="彰化縣流浪狗中途之家">彰化縣流浪狗中途之家</option>
+					<option value="南投縣公立動物收容所">南投縣公立動物收容所</option>
+					<option value="雲林縣流浪動物收容所">雲林縣流浪動物收容所</option>
+					<option value="嘉義縣流浪犬中途之家">嘉義縣流浪犬中途之家</option>
+					<option value="嘉義市動物保護教育園區">嘉義市動物保護教育園區</option>
+					<option value="屏東縣公立犬貓中途之家">屏東縣公立犬貓中途之家</option>
+					<option value="宜蘭縣流浪動物中途之家">宜蘭縣流浪動物中途之家</option>
+					<option value="花蓮縣流浪犬中途之家">花蓮縣流浪犬中途之家</option>
+					<option value="臺東縣動物收容中心">臺東縣動物收容中心</option>
+					<option value="基隆市寵物銀行">基隆市寵物銀行</option>
+					<option value="澎湖縣流浪動物收容中心">澎湖縣流浪動物收容中心</option>
+					<option value="金門縣動物收容中心">金門縣動物收容中心</option>
+					<option value="連江縣流浪犬收容中心">連江縣流浪犬收容中心</option>
 					</select></p><br>
 			<button>搜尋</button>
 			</form>
@@ -109,7 +114,7 @@ $_SESSION['count']=0;?>
 			<?php
 				if(empty($_POST))
 				{
-					include 'person_adoption _all.php';
+					include 'mechanism_adoption _all.php';
 				}
 				else
 				{
@@ -124,14 +129,14 @@ $_SESSION['count']=0;?>
 					if($_POST['area']=="*")
 					{$_POST['area']=['$ne' => $_POST['area']];}
 					//查詢條件
-					$filter = ['gender' => $_POST['gender'],
-							   'pet_type' =>$_POST['pet_type'],
-							   'pet_name' =>$_POST['pet_name'],
-							   'area' =>$_POST['area']
+					$filter = ['animal_sex' => $_POST['gender'],
+							   'animal_kind' =>$_POST['pet_type'],
+							   'animal_colour' =>$_POST['pet_name'],
+							   'shelter_name' =>$_POST['area']
 							   ];
-					$options = ['sort' =>['add_time' => 1],'limit' => 10,'skip' => $_SESSION['count']];//排順序先PO的先上
+					$options = ['sort' =>['animal_opendate' => -1],'limit' => 30,'skip' => $_SESSION['count']];//排順序先PO的先上
 					$query = new MongoDB\Driver\Query($filter,$options);//設定查詢變數
-					$cursor = $manager->executeQuery('mydb.Opet', $query);//設定指標變數:查詢變數指向哪個db哪個collection
+					$cursor = $manager->executeQuery('test.animals', $query);//設定指標變數:查詢變數指向哪個db哪個collection
 					$a=$cursor->isDead();//判斷查詢結果是否為空
 
 					if($a==true)
@@ -140,62 +145,23 @@ $_SESSION['count']=0;?>
 					foreach ($cursor as $document) {
 						//設定$doc為陣列才能一一顯示值
 						$doc = (array)$document;
-						$ID=$document->{'_id'}->__toString();
-						echo '<div class="a_animal">';
-						echo	'<a href="animal_info.php?_id=';print_r($ID);echo '"><img src="';print_r($doc['img']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
-						echo	'<p id="pet_id">類別：';print_r($doc['pet_type']);echo'</p>';
-						echo	'<p>品種：';print_r($doc['pet_name']);echo'</p>';
-						echo	'<p>地區：';print_r($doc['area']);echo'</p>';
-						echo	'<p>性別：';print_r($doc['gender']);echo'</p>';
-						echo    '<button type="button">申請認養</button>';
-						echo	'</div>';
+					$ID=$document->{'_id'}->__toString();
+					echo '<div class="a_animal">';
+					echo	'<a href="animal_info.php?_id=';print_r($ID);echo '"><img src="';print_r($doc['album_file']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
+					echo	'<p id="pet_id">類別：';print_r($doc['animal_kind']);echo'</p>';
+					echo	'<p>品種：';print_r($doc['animal_colour']);echo'</p>';
+					echo	'<p>地區：';print_r($doc['shelter_name']);echo'</p>';
+					echo	'<p>性別：';print_r($doc['animal_sex']);echo'</p>';
+					echo    '<button type="button">申請認養</button>';
+					echo	'</div>';
 		  
 					};
 				}?>
-				<a href="last.php?count=5">上一頁</a>
-				<a href="next.php?count=5">下一頁</a>
-			<!--<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>-->
+			
+			
 		</div>
-
+		<a href="last-m.php?count=30">上一頁</a>
+		<a href="next-m.php?count=30">下一頁</a>
 		<script>
 		// Get the modal
 		var modal = document.getElementById('login');

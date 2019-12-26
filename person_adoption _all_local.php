@@ -1,8 +1,7 @@
 <?php
-//session_start();
-$manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");//設定連線
+$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");//設定連線
 $filter = [];//顯示全部動物
-$options = ['sort' =>['add_time' => 1],'limit' => 10,'skip' => $_SESSION['count'],];
+$options = ['sort' =>['add_time' => 1],];
 $query = new MongoDB\Driver\Query($filter,$options);//設定查詢變數
 $cursor = $manager->executeQuery('mydb.Opet', $query);//設定指標變數:查詢變數指向哪個db哪個collection
 $a=$cursor->isDead();//判斷查詢結果是否為空
@@ -15,6 +14,24 @@ if($a==true)
 foreach ($cursor as $document) {
 	//設定$doc為陣列才能一一顯示值
 	$doc = (array)$document;
+	$man = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");
+	$bulk = new MongoDB\Driver\BulkWrite; //設定寫入變數
+	$bulk->insert(['account' => $_SESSION['account'],//使用者登陸後儲存使用者id之類的常用資料。一旦儲存到SESSION中，其他頁面都可以通過SESSION獲取,SESSION的使用要開啟session
+			   'pet_type' => $doc['pet_type'],//寫入資料設定
+			   'pet_name' => $doc['pet_name'],
+			   'gender' => $doc['gender'],
+			   'pet_old' => $doc['pet_old'],
+			   'area' => $doc['area'],
+			   'case' => $doc['case'],
+			   'chip_no' => $doc['chip_no'],
+			   'condition' => $doc['condition'],
+			   'isAdopted' => $doc['isAdopted'],
+			   'adopted' => $doc['adopted'],
+			   'add_time' => $doc['add_time'],
+			   'img' => $doc['img']
+			   ]);
+	$man->executeBulkWrite('mydb.Opet', $bulk);//設定連線
+	
 	$ID=$document->{'_id'}->__toString();
 	echo '<div class="a_animal">';
 	echo	'<a href="animal_info.php?_id=';print_r($ID);echo '"><img src="';print_r($doc['img']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';

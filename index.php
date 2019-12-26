@@ -17,6 +17,7 @@
 		  </div>
 		  <?php 
 		  session_start();
+		  $_SESSION['count']=0;
 		  if(empty($_SESSION['account']))//未登入顯示登入鈕
 		  {
 			echo '<div class="header_right">';
@@ -51,7 +52,7 @@
 		<div id="navbar" class="navbar">
 		  <a class="active" href="index.php">首頁</a>
 		  <a href="person_adoption.php">個人認養</a>
-		  <a href="#">機構認養</a>
+		  <a href="mechanism_adoption.php">機構認養</a>
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>
 		</div>

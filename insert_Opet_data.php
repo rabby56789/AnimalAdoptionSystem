@@ -39,7 +39,7 @@ else{
 
 session_start();
 $time=date("Y-m-d H:i:s");
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");//設定連線
+$manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");//設定連線
 $bulk = new MongoDB\Driver\BulkWrite; //設定寫入變數
 $bulk->insert(['account' => $_SESSION['account'],//使用者登陸後儲存使用者id之類的常用資料。一旦儲存到SESSION中，其他頁面都可以通過SESSION獲取,SESSION的使用要開啟session
 			   'pet_type' => $_POST['pet_type'],//寫入資料設定

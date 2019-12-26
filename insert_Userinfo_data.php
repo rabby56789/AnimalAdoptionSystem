@@ -1,6 +1,6 @@
 <?php
 
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");//設定連線
+$manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");//設定連線
 $bulk = new MongoDB\Driver\BulkWrite; //設定寫入變數
 if($_POST['user_name']=='A')
 {
