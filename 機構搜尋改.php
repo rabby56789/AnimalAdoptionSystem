@@ -6,7 +6,9 @@ $options = ['sort' =>['add_time' => 1],'limit' => 10,'skip' => $_SESSION['count'
 $query = new MongoDB\Driver\Query($filter,$options);//設定查詢變數
 $cursor = $manager->executeQuery('mydb.Opet', $query);//設定指標變數:查詢變數指向哪個db哪個collection
 $a=$cursor->isDead();//判斷查詢結果是否為空
-
+$Q='137759';
+$D='AAAEG1081231003';
+$url='https://asms.coa.gov.tw/AmlApp/App/AnnounceList.aspx?Id='.$Q.'&AcceptNum='.$D.'&PageType=Adopt';
 if($a==true)
 {
 	echo '<p>查無結果</p>';
@@ -22,7 +24,7 @@ foreach ($cursor as $document) {
 	echo	'<p>品種：';print_r($doc['pet_name']);echo'</p>';
 	echo	'<p>地區：';print_r($doc['area']);echo'</p>';
 	echo	'<p>性別：';print_r($doc['gender']);echo'</p>';
-	echo    '<button type="button">申請認養</button>';
+	echo    '<button type="button" onclick="location.href=';echo '\'';echo $url;echo '\'">申請認養</button>';
 	echo	'</div>';
 		  
 }

@@ -61,11 +61,14 @@ body {
   margin: 10px;
   float: left;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .a_animal img{
-  height: calc(100% / 2);
-  width: calc(100% / 2);
+  object-fit: cover;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 5px;
   display:block;
   margin:auto;
   padding: 0.5vw;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<?php //session_start();
-$_SESSION['count']=0;?>
+
 <html lang="zh-TW" dir="ltr">
 	<head>
 		<meta charset = "utf-8">
@@ -12,56 +11,11 @@ $_SESSION['count']=0;?>
 		</script>
 	</head>
 	<body>
-		<div class="header">
-		  <div class="header_left">
-		  	<h2>動物認養系統</h2>
-		  </div>
-		  <?php 
-		  session_start();
-		  if(empty($_SESSION['account']))//未登入顯示登入鈕
-		  {
-			echo '<div class="header_right">';
-		  	echo '<button onclick="document.getElementById(\'login\').style.display=\'block\'" style="width:auto;">登入</button>';
-			echo '</div>';
-		  }
-		  else//已登入顯示帳號
-		  {
-			echo '<div class="header_right">';
-		  	echo '<h3>hi, <a href="user_index.php">';print_r($_SESSION['user_name']);echo '</a></h3>';
-			echo '</div>';
-		  }
-		  ?>
-		  <div id="login" class="modal">
-		  <form class="modal-content animate" action="login_decide.php" method="post">
-		    <div class="imgcontainer">
-		      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
-		    </div>
-		    <div class="container">
-		      <label for="account"><b>帳號(Email):</b></label>
-		      <input type="text" placeholder="Enter Account" name="account" required>
-		      <label for="psd"><b>密碼:</b></label>
-		      <input type="password" placeholder="Enter Password" name="psd" required>
-		      <button type="submit" >Login</button>
-		    </div>
-		  </form>
-		  </div>
-		</div>
-		
-		<div id="navbar" class="navbar">
-		  <a href="index.php">首頁</a>
-		  <a class="active" href="person_adoption.php">個人認養</a>
-		  <a href="mechanism_adoption.php">機構認養</a>
-		  <a href="#">遺失協尋</a>
-		  <a href="#">二手用品</a>
-		</div>
-		
 		<div id="mySidenav" class="sidenav">
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-		  <div>
-			<form action="person_adoption.php" method="post">	
-			
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
+			<form action="person_adoption.php" method="get">	
 			<p>性別：<input type="radio" value="*" name="gender" checked>不拘
-					 <input type="radio" value="男" name="gender" checked>男
+					 <input type="radio" value="男" name="gender">男
 					 <input type="radio" value="女" name="gender">女
 					 <input type="radio" value="無法告知" name="gender">無法告知</p><br>
 			<p>動物類別: <select name="pet_type">
@@ -100,102 +54,109 @@ $_SESSION['count']=0;?>
 					</select></p><br>
 			<button>搜尋</button>
 			</form>
-		  </div>
 		</div>
 		
 		<div class="content" id="main">
 			<button class="filter_button" onclick="openNav()">篩選器</button>
 			<iframe id="animal_info_content" src="animal_info.php" ></iframe>
 			<?php
-				if(empty($_POST))
-				{
-					include 'person_adoption _all.php';
+			session_start();
+				$manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");//設定連線
+				if(empty($_GET) || (empty($_GET['gender'])&&empty($_GET['pet_type'])&&empty($_GET['pet_name'])&&empty($_GET['area'])))
+				{	$filter = ['adopted' => "False"];					
+					$gender=0;//初始劃分頁數值
+					$pet_type=0;
+					$pet_name=0;
+					$area=0;
 				}
 				else
-				{
-					$manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");//設定連線
+				{	
 					//不拘和全選之處理
-					if($_POST['gender']=="*")
-					{$_POST['gender']=['$ne' => $_POST['gender']];}
-					if($_POST['pet_type']=="*")
-					{$_POST['pet_type']=['$ne' => $_POST['pet_type']];}
-					if($_POST['pet_name']=="")
-					{$_POST['pet_name']=['$ne' => $_POST['pet_name']];}
-					if($_POST['area']=="*")
-					{$_POST['area']=['$ne' => $_POST['area']];}
+					if($_GET['gender']=="*")
+					{$gender="*";$_GET['gender']=['$ne' => $_GET['gender']];}
+					else{$gender=$_GET['gender'];}
+					if($_GET['pet_type']=="*")
+					{$pet_type="*";$_GET['pet_type']=['$ne' => $_GET['pet_type']];}
+					else{$pet_type=$_GET['pet_type'];}
+					if($_GET['pet_name']=="")
+					{$pet_name="";$_GET['pet_name']=['$ne' => $_GET['pet_name']];}
+					else{$pet_name=$_GET['pet_name'];}
+					if($_GET['area']=="*")
+					{$area="*";$_GET['area']=['$ne' => $_GET['area']];}
+					else{$area=$_GET['area'];}
 					//查詢條件
-					$filter = ['gender' => $_POST['gender'],
-							   'pet_type' =>$_POST['pet_type'],
-							   'pet_name' =>$_POST['pet_name'],
-							   'area' =>$_POST['area']
+					$filter = ['gender' => $_GET['gender'],
+							   'pet_type' =>$_GET['pet_type'],
+							   'pet_name' =>$_GET['pet_name'],
+							   'area' =>$_GET['area'],
+							   'adopted' => "False",
 							   ];
-					$options = ['sort' =>['add_time' => 1],'limit' => 10,'skip' => $_SESSION['count']];//排順序先PO的先上
-					$query = new MongoDB\Driver\Query($filter,$options);//設定查詢變數
-					$cursor = $manager->executeQuery('mydb.Opet', $query);//設定指標變數:查詢變數指向哪個db哪個collection
-					$a=$cursor->isDead();//判斷查詢結果是否為空
-
-					if($a==true)
-					{print_r("查詢結果為空");}
-					//顯示查詢資料
-					foreach ($cursor as $document) {
-						//設定$doc為陣列才能一一顯示值
-						$doc = (array)$document;
-						$ID=$document->{'_id'}->__toString();
-						echo '<div class="a_animal">';
-						echo	'<a href="animal_info.php?_id=';print_r($ID);echo '"><img src="';print_r($doc['img']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
-						echo	'<p id="pet_id">類別：';print_r($doc['pet_type']);echo'</p>';
-						echo	'<p>品種：';print_r($doc['pet_name']);echo'</p>';
-						echo	'<p>地區：';print_r($doc['area']);echo'</p>';
-						echo	'<p>性別：';print_r($doc['gender']);echo'</p>';
-						echo    '<button type="button">申請認養</button>';
-						echo	'</div>';
-		  
-					};
-				}?>
-				<a href="last.php?count=5">上一頁</a>
-				<a href="next.php?count=5">下一頁</a>
-			<!--<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>
-			<div class="a_animal">
-				<a href="javascript: handler();"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>種類：</p>
-				<p>品種：</p>
-				<p>地區：</p>
-				<p>是否提供認養：</p>
-				<button type="button">申請認養</button>
-			</div>-->
+				}								
+				$q = new MongoDB\Driver\Query($filter);//筆數用				
+				$cur = $manager->executeQuery('mydb.Opet', $q);//筆數用
+				$a=$cur->isDead();//判斷查詢結果是否為空
+				$num=0;
+				if($a==true)
+				{echo '<div class="a_animal"><p>查詢結果為空</p></div>';}
+				//計算查詢(全部)資料筆數
+				foreach($cur as $d)
+				{
+					$num=$num+1;//計算筆數
+				}
+				$data_nums=$num;//全筆數SESSION好廢XD只會用全域嗚嗚嗚
+				
+				$per=10;//每頁顯示項目數量
+				$pages = ceil($data_nums/$per); //取得不小於值的下一個整數
+				if (!isset($_GET["page"]))//假如$_GET["page"]未設置
+				{$page=1;/*則在此設定起始頁數*/}
+				else 
+				{$page = intval($_GET["page"]); /*確認頁數只能夠是數值資料*/}
+				$options = ['sort' =>['add_time' => 1],'limit'=>$per,'skip'=>($per*$page)-10,];//排順序先PO的先上
+				$query = new MongoDB\Driver\Query($filter,$options);//設定查詢變數
+				$cursor = $manager->executeQuery('mydb.Opet', $query);//設定指標變數:查詢變數指向哪個db哪個collection
+				
+				//顯示查詢資料
+				foreach ($cursor as $document)
+				{	//設定$doc為陣列才能一一顯示值
+					$doc = (array)$document;
+					$ID=$document->{'_id'}->__toString();
+					echo '<div class="a_animal">';
+					echo	'<a href="animal_info.php?_id=';print_r($ID);echo '"><img src="';print_r($doc['img']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
+					echo	'<p id="pet_id">類別：';print_r($doc['pet_type']);echo'</p>';
+					echo	'<p>品種：';print_r($doc['pet_name']);echo'</p>';
+					echo	'<p>地區：';print_r($doc['area']);echo'</p>';
+					echo	'<p>性別：';print_r($doc['gender']);echo'</p>';
+					echo    '<button type="button" onclick="top.location.href=\'https://www.google.com/?hl=zh-tw\'">申請認養</button>';
+					echo	'</div>';	
+				};	
+			?>
+			
 		</div>
-
+		<!--求助UI，新增id="footer"之css-->
+		<div id="footer">
+		<?php
+		if(empty($_GET))//無搜尋結果之分頁顯示
+		{
+			echo '共 '.$data_nums.' 筆-在 '.$page.' 頁-共 '.$pages.' 頁<br/>';
+			echo "第 ";
+			for( $i=1 ; $i<=$pages ; $i++ )
+			{
+				if ( $page-3 < $i && $i < $page+3 )
+				{echo "<a href=?page=".$i.">".$i."</a> ";}
+			}
+		}
+		else//有搜尋結果之分頁顯示
+		{
+			echo '共 '.$data_nums.' 筆-在第 '.$page.' 頁-共 '.$pages.' 頁<br/>';
+			echo "第 ";
+			for( $i=1 ; $i<=$pages ; $i++ )
+			{
+				if ( $page-3 < $i && $i < $page+3 )
+				{echo "<a href=?page=".$i."&gender=".$gender."&pet_type=".$pet_type."&pet_name=".$pet_name."&area=".$area.">".$i."</a> ";}
+			}
+		}	
+		?>
+		</div>
 		<script>
 		// Get the modal
 		var modal = document.getElementById('login');
@@ -211,27 +172,10 @@ $_SESSION['count']=0;?>
 			$(".navbar a").removeClass("active");
 			$(this).addClass("active");
 		});
-		window.onscroll = function() {myFunction()};
+		
 
 		var navbar = document.getElementById("navbar");
 		var filter = document.getElementById("mySidenav");
-		var sticky = navbar.offsetTop;
-
-		function myFunction() {
-		  if (window.pageYOffset >= sticky) {
-		    navbar.classList.add("sticky");
-			filter.classList.remove("sidenav");
-			filter.classList.add("sticky_filter");
-		  } else {
-		    navbar.classList.remove("sticky");
-			filter.classList.remove("sticky_filter");
-			filter.classList.add("sidenav");
-		  }
-		}
-		
-		function handler() {
-		   document.getElementById('animal_info_content').style.display="block";
-		}
 		
 		function openNav() {
 		  document.getElementById("mySidenav").style.width = "250px";

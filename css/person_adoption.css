@@ -203,7 +203,7 @@ span.psw {
 
 .content {
 	margin-left: 0vw;
-    margin-top: 1vh;
+    margin-top: 1.5vh;
 }
 
 #animal_info_content {
@@ -244,7 +244,7 @@ span.psw {
   background-color: #ff7d89;
   color: black;
   padding: 0.5vw;
-  margin: 0.5vw 85vw 0vw 1vw;
+  margin: 1vw 85vw 0vw 1vw;
   float: left;
   border: none;
   cursor: pointer;
@@ -257,12 +257,10 @@ span.psw {
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 7.5vh;
   left: 0;
   background-color: #ff7d89;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 15vh;
   z-index: -1;
 }
 
@@ -302,7 +300,6 @@ span.psw {
 
 .a_animal{
   width: 18.1vw;
-  height:20vw;
   background-color: #ffd1ab;
   margin: 10px;
   float: left;
@@ -310,9 +307,10 @@ span.psw {
 }
 
 .a_animal img{
-  max-width:300px;
-  height: calc(100% / 2);
-  /*width: calc(100% / 2);*/
+  object-fit: cover;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 5px;
   display:block;
   margin:auto;
   padding: 0.5vw;
@@ -336,5 +334,14 @@ span.psw {
   border-radius: 5px;
   width: 5.5vw;
 }
-
+#footer {
+	margin:0px auto;
+    box-sizing: border-box;
+    /* 設定footer絕對位置在底部 */
+    position: fixed;
+    bottom: 0;
+	text-align:center;
+    /* 展開footer寬度 */
+    width: 100%;
+}
 

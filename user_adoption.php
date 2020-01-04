@@ -19,20 +19,20 @@
 				</div>
 			</div>
 			<div class="a_animal">
-				<a href="animal_info.html"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
+				<a href="animal_info.php"><img src="https://asms.coa.gov.tw/Amlapp/Upload/pic/79866ec4-0259-4c05-83fd-ec4ff90893ca.jpg" alt="no image" onerror=this.src="ui_img/no_image.png" mode='aspectFill'></a>
+				<p>種類：</p>
 				<p>品種：</p>
+				<p>地區：</p>
+				<p>是否提供認養：</p>
 				<button type="button">確認認養</button>
 				<button type="button">刪除</button>
 			</div>
 			<div class="a_animal">
-				<a href="animal_info.html"><img src="" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
+				<a href="animal_info.php"><img src="" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
+				<p>種類：</p>
 				<p>品種：</p>
-				<button type="button">確認認養</button>
-				<button type="button">刪除</button>
-			</div>
-			<div class="a_animal">
-				<a href="animal_info.html"><img src="" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>品種：</p>
+				<p>地區：</p>
+				<p>是否提供認養：</p>
 				<button type="button">確認認養</button>
 				<button type="button">刪除</button>
 			</div>
@@ -42,18 +42,11 @@
 				<div class="adoption_operation_left"><h4>認養成功</h4></div>
 			</div>
 			<div class="a_animal">
-				<a href="animal_info.html"><img src="" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
+				<a href="animal_info.php"><img src="" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
+				<p>種類：</p>
 				<p>品種：</p>
-				<button type="button">回復</button>
-			</div>
-			<div class="a_animal">
-				<a href="animal_info.html"><img src="" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>品種：</p>
-				<button type="button">回復</button>
-			</div>
-			<div class="a_animal">
-				<a href="animal_info.html"><img src="" alt="no image" onerror=this.src="ui_img/no_image.png"></a>
-				<p>品種：</p>
+				<p>地區：</p>
+				<p>是否提供認養：</p>
 				<button type="button">回復</button>
 			</div>
 		</div>

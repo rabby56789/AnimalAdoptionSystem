@@ -12,9 +12,11 @@
 	</head>
 	<body>
 		<div class="header">
+		<a href="index.php" style="text-decoration:none;">
 		  <div class="header_left">
 		  	<h2>動物認養系統</h2>
 		  </div>
+		</a>
 		  <div class="header_right">
 		  	<h3>hi, <a href="user_index.php"><?php session_start();print_r($_SESSION['user_name']);?></a></h3>
 		  </div>
@@ -22,34 +24,21 @@
 
 		<div id="navbar" class="navbar">
 		  <a class="active" href="index.php">首頁</a>
-		  <a href="person_adoption.php">個人認養</a>
-		  <a href="#">機構認養</a>
+		  <a href="#" name="person_adoption.php">個人認養</a>
+		  <a href="#" name="mechanism_adoption.php">機構認養</a>
 		  <a href="#">遺失協尋</a>
 		  <a href="#">二手用品</a>
 		</div>
 		
-		<div class="content">
-			<ul id="tabs" class="tabs">
-			    <li><div class="active" name="user_foster.php">送養</div></li>
-			    <li><div href="#" name="user_adoption.php">認養</div></li>
-			    <li><div href="#" name="user_receive.php">收信夾</div></li>
-			    <li><div href="#" name="user_second_hand.php">二手用品</div></li>
-			    <span><li><div href="#" name="user_info.php">個人資料</div></li></span>	
-			</ul>
-			<div id="content">
-				<iframe src="user_foster.php"></iframe>
-			</div>
+		<div id="content">
+			<iframe src="user_index_content.php"></iframe>
 		</div>
 
 		<script>
 		$(".navbar a").click(function(){
 			$(".navbar a").removeClass("active");
 			$(this).addClass("active");
-		});
-		$(".tabs li div").click(function(){
-			$(".tabs li div").removeClass("active");
-			$(this).addClass("active");
-			$(".content iframe").attr('src', $(this).attr("name"));
+			$("#content iframe").attr('src', $(this).attr("name"));
 		});
 		window.onscroll = function() {myFunction()};
 
@@ -63,6 +52,6 @@
 		    navbar.classList.remove("sticky");
 		  }
 		}
-		</script>	
+		</script>
 	</body>
 </html>

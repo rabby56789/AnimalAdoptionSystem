@@ -11,7 +11,7 @@
 		</script>
 	</head>
 	<body>
-		<button class="back" onclick="javascript:history.back()">返回</button>
+		<button class="back" onclick="back()">返回</button>
 		<div class="context">
 			<div class="title">動物基本資料</div>
 			<p>是否開放認養:<?php print_r($doc['isAdopted'])?></p><br>

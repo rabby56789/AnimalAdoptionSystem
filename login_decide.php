@@ -17,9 +17,6 @@ if($a==false)
 	//var_dump($a);
 	$_SESSION['account']=$_POST['account'];
 	$_SESSION['user_name']=$doc['user_name'];
-	
-	print_r($_SESSION['user_name']);
-	//header("refresh:0;url=index.php");
 }
 else
 {
