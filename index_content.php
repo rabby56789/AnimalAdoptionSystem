@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW" dir="ltr">
 	<head>
 		<meta charset = "utf-8">
@@ -11,6 +10,12 @@
 		</script>
 	</head>
 	<body>
-		
+	<p>qqqqqqqq</p>
+	<p>qqqqqqqq</p>
+	<p>qqqqqqqq</p>
+	<p>qqqqqqqq</p>
+	<p>qqqqqqqq</p>
+	<p>qqqqqqqq</p>
+	<?php include'showannouncement.php';?>
 	</body>
 </html>

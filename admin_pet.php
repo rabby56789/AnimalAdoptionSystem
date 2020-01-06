@@ -13,7 +13,7 @@
 	<body>
 		<div id="mySidenav" class="sidenav">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
-			<form action="person_adoption.php" method="get">	
+			<form action="admin_pet.php" method="get">	
 			<p>性別：<input type="radio" value="*" name="gender" checked>不拘
 					 <input type="radio" value="男" name="gender">男
 					 <input type="radio" value="女" name="gender">女
@@ -126,7 +126,8 @@
 					echo	'<p>品種：';print_r($doc['pet_name']);echo'</p>';
 					echo	'<p>地區：';print_r($doc['area']);echo'</p>';
 					echo	'<p>性別：';print_r($doc['gender']);echo'</p>';
-					echo    '<button type="button" onclick="top.location.href=\'adoption_form.php?_id=';print_r($ID);echo '\'">申請認養</button>';
+					echo	'<button type="button" onclick="location.href=';echo '\'';echo 'updata_Opet_data.php?_id=';print_r($ID);echo '\'">修改</button>
+							 <button type="button" onclick="location.href=';echo '\'';echo 'delete_Opet_data.php?_id=';print_r($ID);echo '\'">刪除</button>';
 					echo	'</div>';	
 				};	
 			?>
