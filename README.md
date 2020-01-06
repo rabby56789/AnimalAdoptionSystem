@@ -1,90 +1,51 @@
-# Welcome to GitHub
+ 1.提供給系統管理者：
 
-Welcome to GitHub—where millions of developers work together on software. Ready to get started? Let’s learn how this all works by building and publishing your first GitHub Pages website!
+    -管理帳戶：刪除惡意使用者。
 
-## Repositories
+    -管理頁面：刪除垃圾內容。
 
-Right now, we’re in your first GitHub **repository**. A repository is like a folder or storage space for your project. Your project's repository contains all its files such as code, documentation, images, and more. It also tracks every change that you—or your collaborators—make to each file, so you can always go back to previous versions of your project if you make any mistakes.
+2. 提供給所有使用者：
 
-This repository contains three important files: The HTML code for your first website on GitHub, the CSS stylesheet that decorates your website with colors and fonts, and the **README** file. It also contains an image folder, with one image file.
+   -註冊及登入登出：提供給使用者獲得更多進階功能的權限，可註冊成為用戶及登入登出。
+   
+   -查詢機構流浪動物資訊：使用者可以查看機構中流浪動物資訊，可以地區、動物種類、該動物品種、性別及可否被認養等條件查詢，並以照片及簡介呈現。
 
-## Describe your project
+   -查詢個人流浪動物資訊：使用者可以查看個人提供流浪動物資訊，可以地區、動物種類、該動物品種、性別及可否被認養等條件查詢，並以照片及簡介呈現。
 
-You are currently viewing your project's **README** file. **_README_** files are like cover pages or elevator pitches for your project. They are written in plain text or [Markdown language](https://guides.github.com/features/mastering-markdown/), and usually include a paragraph describing the project, directions on how to use it, who authored it, and more.
+   -遺失協尋功能(進階功能)：提供給所有使用者登記寵物失蹤訊息的功能，在主選單下有主要頁面，另在logo旁會有跑馬燈及首頁中會有圖片放映燈顯示。
 
-[Learn more about READMEs](https://help.github.com/en/articles/about-readmes)
+   -查詢統計資料(進階功能)：提供給使用者查看機構的統計資料。
 
-## Your first website
+3. 提供給所有用戶(已註冊使用者)：
 
-**GitHub Pages** is a free and easy way to create a website using the code that lives in your GitHub repositories. You can use GitHub Pages to build a portfolio of your work, create a personal website, or share a fun project that you coded with the world. GitHub Pages is automatically enabled in this repository, but when you create new repositories in the future, the steps to launch a GitHub Pages website will be slightly different.
+   -個人頁面的修改：提供給其他用戶查看的資訊頁面，可自由修改。
+   
+   *認養區塊：
 
-[Learn more about GitHub Pages](https://pages.github.com/)
+   -認養個人流浪動物：認養人可以在查看流浪動物資訊之後，選擇想要認養的動物並提出申請，填寫送養者提出的申請資料(註冊時已有的資料會自動填上)後送出申請至送養者的申請通知收信夾，等待送養者私下確認後進行現場正式認養。
 
-## Rename this repository to publish your site
+   -認養機構流浪動物：認養人可以在查看流浪動物資訊之後，選擇想要認養的動物並提出申請，填寫送養者提出的申請資料(註冊時已有的資料會自動填上)後將移至全國認養系統網站，確認自動填入的資料無誤後，在全國認養系統網站進行剩餘認養流程。
 
-We've already set-up a GitHub Pages website for you, based on your personal username. This repository is called `hello-world`, but you'll rename it to: `username.github.io`, to match your website's URL address. If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.
+   -意見回饋：認養人可以針對該送養人提供一次意見回饋，會送至送養者的意見回饋收信夾。
 
-Let's get started! To update this repository’s name, click the `Settings` tab on this page. This will take you to your repository’s settings page. 
+   -查看及修改申請中的流浪動物：查看及取消申請及認養成功流浪動物，在個人頁面中子頁面呈現。
 
-![repo-settings-image](https://user-images.githubusercontent.com/18093541/63130482-99e6ad80-bf88-11e9-99a1-d3cf1660b47e.png)
+   -查看已經認養成功的流浪動物：查看所有認養成功之動物，在個人頁面中子頁面呈現。
 
-Under the **Repository Name** heading, type: `username.github.io`, where username is your username on GitHub. Then click **Rename**—and that’s it. When you’re done, click your repository name or browser’s back button to return to this page.
+   *送養區塊：
 
-<img width="1039" alt="rename_screenshot" src="https://user-images.githubusercontent.com/18093541/63129466-956cc580-bf85-11e9-92d8-b028dd483fa5.png">
+   -查看已登記個人流浪動物：用戶可以查看已登記之所有動物，在個人頁面中子頁面呈現。
 
-Once you click **Rename**, your website will automatically be published at: https://your-username.github.io/. The HTML file—called `index.html`—is rendered as the home page and you'll be making changes to this file in the next step.
+   -登記個人流浪動物資訊：用戶可以新增個人流浪動物照片及相關資訊(地區、動物種類、該動物品種、性別、年齡、健康狀況及可否被認養)。
 
-Congratulations! You just launched your first GitHub Pages website. It's now live to share with the entire world
+   -修改個人流浪動物資訊：用戶可以修改個人流浪動物照片及相關資訊(地區、動物種類、該動物品種、性別、年齡、健康狀況及可否被認養)及可供認養到送養成功狀態。
 
-## Making your first edit
+   -刪除指定個人流浪動物：用戶可以刪除指定個人流浪動物。
 
-When you make any change to any file in your project, you’re making a **commit**. If you fix a typo, update a filename, or edit your code, you can add it to GitHub as a commit. Your commits represent your project’s entire history—and they’re all saved in your project’s repository.
+   -設定申請資料的需求：設定給認養人填寫的詳細申請資料。
 
-With each commit, you have the opportunity to write a **commit message**, a short, meaningful comment describing the change you’re making to a file. So you always know exactly what changed, no matter when you return to a commit.
+   -收信夾：接收系統傳送的訊息，在個人頁面中子頁面呈現。
 
-## Practice: Customize your first GitHub website by writing HTML code
+   -私訊功能(進階功能)：點擊該用戶個人頁面之私訊按鈕填寫訊息內容後送至該用戶收信夾。
 
-Want to edit the site you just published? Let’s practice commits by introducing yourself in your `index.html` file. Don’t worry about getting it right the first time—you can always build on your introduction later.
-
-Let’s start with this template:
-
-```
-<p>Hello World! I’m [username]. This is my website!</p>
-```
-
-To add your introduction, copy our template and click the edit pencil icon at the top right hand corner of the `index.html` file.
-
-<img width="997" alt="edit-this-file" src="https://user-images.githubusercontent.com/18093541/63131820-0794d880-bf8d-11e9-8b3d-c096355e9389.png">
-
-
-Delete this placeholder line:
-
-```
-<p>Welcome to your first GitHub Pages website!</p>
-```
-
-Then, paste the template to line 15 and fill in the blanks.
-
-<img width="1032" alt="edit-githuboctocat-index" src="https://user-images.githubusercontent.com/18093541/63132339-c3a2d300-bf8e-11e9-8222-59c2702f6c42.png">
-
-
-When you’re done, scroll down to the `Commit changes` section near the bottom of the edit page. Add a short message explaining your change, like "Add my introduction", then click `Commit changes`.
-
-
-<img width="1030" alt="add-my-username" src="https://user-images.githubusercontent.com/18093541/63131801-efbd5480-bf8c-11e9-9806-89273f027d16.png">
-
-Once you click `Commit changes`, your changes will automatically be published on your GitHub Pages website. Refresh the page to see your new changes live in action.
-
-:tada: You just made your first commit! :tada:
-
-## Extra Credit: Keep on building!
-
-Change the placeholder Octocat gif on your GitHub Pages website by [creating your own personal Octocat emoji](https://myoctocat.com/build-your-octocat/) or [choose a different Octocat gif from our logo library here](https://octodex.github.com/). Add that image to line 12 of your `index.html` file, in place of the `<img src=` link.
-
-Want to add even more code and fun styles to your GitHub Pages website? [Follow these instructions](https://github.com/github/personal-website) to build a fully-fledged static website.
-
-![octocat](./images/create-octocat.png)
-
-## Everything you need to know about GitHub
-
-Getting started is the hardest part. If there’s anything you’d like to know as you get started with GitHub, try searching [GitHub Help](https://help.github.com). Our documentation has tutorials on everything from changing your repository settings to configuring GitHub from your command line.
+   -寵物二手用品交易(進階功能)：主選單下會有主要頁面，顯示所有登記之用品，在個人頁面中有二手用品頁面可登入及展示用品，在兩者中點擊用品將會移至用品介紹頁面進行交易。
