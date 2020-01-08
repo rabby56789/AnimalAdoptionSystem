@@ -10,12 +10,10 @@
 		</script>
 	</head>
 	<body>
-	<p>qqqqqqqq</p>
-	<p>qqqqqqqq</p>
-	<p>qqqqqqqq</p>
-	<p>qqqqqqqq</p>
-	<p>qqqqqqqq</p>
-	<p>qqqqqqqq</p>
+	<br/>
+	<br/>
+	<br/>
+	
 	<?php include'showannouncement.php';?>
 	</body>
 </html>

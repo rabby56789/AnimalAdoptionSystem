@@ -32,18 +32,14 @@ p {
   padding: 0px;
   margin: 0;
 }
-.img
-{
-	position:absolute;
-	left:50%;
-	top:20%;
-}
-.img img{
-  object-fit: cover;
-  height: 30vw;
-  width: 30vw;
-  border-radius: 20px;
-  display:block;
-  margin:auto;
-  padding: 0.5vw;
+
+.submit{
+  background-color: #6effc4;
+  color: black;
+  padding: 1vw;
+  margin: 1vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 5vw;
 }

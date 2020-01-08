@@ -14,11 +14,11 @@
 		<div id="mySidenav" class="sidenav">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
 			<form action="admin_pet.php" method="get">	
-			<p>性別：<input type="radio" value="*" name="gender" checked>不拘
-					 <input type="radio" value="男" name="gender">男
-					 <input type="radio" value="女" name="gender">女
-					 <input type="radio" value="無法告知" name="gender">無法告知</p><br>
-			<p>動物類別: <select name="pet_type">
+			<p>性別：<br><input class="radio"class="radio"type="radio" value="*" name="gender" checked>不拘
+					 <input class="radio" type="radio" value="男" name="gender">男
+					 <input class="radio" type="radio" value="女" name="gender">女
+					 <input class="radio" type="radio" value="無法告知" name="gender">無法告知</p><br>
+			<p>動物類別: <br><select name="pet_type">
 						 <option value="*">全選</option>
 						 <option value="狗">狗</option>
 						 <option value="貓">貓</option>
@@ -52,7 +52,7 @@
 					<option value="金門縣">金門縣</option>
 					<option value="連江縣">連江縣</option>
 					</select></p><br>
-			<button>搜尋</button>
+			<button class="filter_search">搜尋</button>
 			</form>
 		</div>
 		
@@ -126,8 +126,7 @@
 					echo	'<p>品種：';print_r($doc['pet_name']);echo'</p>';
 					echo	'<p>地區：';print_r($doc['area']);echo'</p>';
 					echo	'<p>性別：';print_r($doc['gender']);echo'</p>';
-					echo	'<button type="button" onclick="location.href=';echo '\'';echo 'updata_Opet_data.php?_id=';print_r($ID);echo '\'">修改</button>
-							 <button type="button" onclick="location.href=';echo '\'';echo 'delete_Opet_data.php?_id=';print_r($ID);echo '\'">刪除</button>';
+					echo	'<button type="button" onclick="location.href=';echo '\'';echo 'delete_Opet_data.php?_id=';print_r($ID);echo '\'">刪除</button>';
 					echo	'</div>';	
 				};	
 			?>
@@ -159,7 +158,7 @@
 		?>
 		</div>
 		<script>
-		// Get the modal
+				// Get the modal
 		var modal = document.getElementById('login');
 
 		// When the user clicks anywhere outside of the modal, close it
@@ -187,6 +186,21 @@
 		  document.getElementById("mySidenav").style.width = "0";
 		  document.getElementById("main").style.marginLeft= "0";
 		}
+		
+		/* Every time the window is scrolled ... */
+		(function scrollFooter() {        
+			var timer;
+			$(window).bind('scroll',function () {
+				clearTimeout(timer);
+				timer = setTimeout( refresh , 1300 );
+				document.getElementById('footer').style.display = "block";
+			});
+			var refresh = function () { 
+				// do stuff
+				document.getElementById('footer').style.display = "none";
+				console.log('Stopped Scrolling'); 
+			};
+		})();
 		</script>
 		
 	</body>

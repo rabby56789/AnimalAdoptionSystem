@@ -5,51 +5,8 @@ body {
   font-family: Arial, Helvetica, sans-serif, Microsoft YaHei, Microsoft JhengHei, '微軟雅黑體', '微軟正黑體', '黑體';;
 }
 
-.header {
-  background-color: #3E5887;
-  padding: 0vw;
-  width: 100%;
-  overflow: hidden;
-}
-
-.header_left{
-  float: left;
-}
-
-.header_right{
-  float: right;
-}
-
-.header_left h2 {
-  font-size: 3vw;
-  padding: 0.5vw;
-  margin: 1vw;
-  color: white;
-}
-
-.header_right h3{
-  font-size: 1.5vw;
-  padding: 1vw;
-  margin: 1vw;
-  color: white;
-  vertical-align: middle;
-  line-height: 20px;
-}
-
-.header_right button{
-  background-color: #3E5887;
-  color: white;
-  padding: 1vw;
-  margin: 1vw;
-  border: none;
-  cursor: pointer;
-  transition: 0.5s linear;
-  vertical-align: middle;
-  line-height: 2vw;
-}
-
-.header_right button:hover {
-  background-color: #0acc3e;
+.textArea{
+	 padding: 25px 50px 75px 100px;
 }
 
 /* Full-width input fields */
@@ -88,11 +45,6 @@ button:hover {
   padding: 16px;
 }
 
-.container p {
-	text-align: center;
-	font-size: 10px;
-}
-
 span.psw {
   float: right;
   padding-top: 16px;
@@ -118,8 +70,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  border-radius: 10px;
-  width: 30%; /* Could be more or less, depending on screen size */
+  width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -205,33 +156,20 @@ span.psw {
   color: white;
 }
 
-#content iframe{
-  position: absolute;
-  bottom: 0;
-  border: none;
-  width: 100vw;
-  height: 80vh;
-  z-index: -1;
+.content {
 }
 
-.dropdown {
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#content {
   
-}
-
-.dropdown_content {
-  display: none;
-  position: absolute;
-  background-color: #0acc3e;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 0vw 1.5vw;
-  z-index: 10;
-  transition: 0.5s linear;
-}
-
-.dropdown:hover .dropdown_content {
-  display: block;
-}
-
-.dropdown_content:hover {
-	background-color: #02e88b;
 }

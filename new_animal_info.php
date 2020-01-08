@@ -58,7 +58,7 @@
 			<p>認養條件: <input type="text" name="condition"></p><br>
 			<p>是否開放送養：<input type="radio" value="是" name="isAdopted" required>是<input type="radio" value="否" name="isAdopted">否<br>
 			<input name="img" size="35" type="file" required><br/>
-			<button>送出</button>
+			<button class="submit">送出</button>
 			</form>
 		</div>
 

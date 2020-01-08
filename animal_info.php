@@ -24,7 +24,10 @@
 			<p>晶片號碼:<?php print_r($doc['chip_no'])?></p><br>
 			<p>認養條件:<?php print_r($doc['condition'])?></p><br>
 		</div>
-		
+		<?php echo '<div class="img">
+						<img src="';print_r($doc['img']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png">
+					</div>';
+		?>
 		<script>
 			function back() {
 				window.history.back();

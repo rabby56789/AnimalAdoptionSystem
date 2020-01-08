@@ -17,17 +17,51 @@
 		  	<h2>動物認養系統</h2>
 		  </div>
 		</a>
-		  <div class="header_right">
-		  	<h3>hi, <a href="user_index.php"><?php session_start();print_r($_SESSION['user_name']);?></a></h3>
-		  </div>
+		<?php 
+		  session_start();
+		  if(empty($_SESSION['account']))//未登入顯示登入鈕
+		  {
+			echo '<div class="header_right">';
+		  	echo '<button onclick="document.getElementById(\'login\').style.display=\'block\'" style="width:auto;">登入</button>';
+			echo '</div>';
+		  }
+		  else//已登入顯示帳號
+		  {
+			echo '<div class="header_right dropdown">';
+			if($_SESSION['admin']=="False")
+			{echo '<h3>hi, <a style="color:#02e88b" href="user_index.php">';print_r($_SESSION['user_name']);echo '</a></h3>';}
+			else
+			{echo '<h3>hi, <a style="color:#02e88b" href="admin.php">';print_r($_SESSION['user_name']);echo '</a></h3>';}
+			echo '<div class="dropdown_content">';
+			echo '<a href="logout.php"><h3>登出</h3></a>';
+			echo '</div>';
+			echo '</div>';
+		  }
+		?>
+		</div>
+		  
+		<div id="login" class="modal">
+		  <form class="modal-content animate" action="login_decide.php" method="post">
+		    <div class="imgcontainer">
+		      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+		    </div>
+		    <div class="container">
+		      <label for="account"><b>帳號</b></label>
+		      <input type="text" placeholder="輸入電子信箱" name="account" required>
+		      <label for="psd"><b>密碼:</b></label>
+		      <input type="password" placeholder="輸入密碼" name="psd" required>
+		      <button type="submit" >登入</button>
+			  <p>沒有帳戶嗎？點<a href="#" name="user_register.php">這裡</a>註冊新帳戶</p>
+		    </div>
+		  </form>
 		</div>
 
 		<div id="navbar" class="navbar">
-		  <a class="active" href="index.php">首頁</a>
+		  <a class="active" href="#" name="index_content.php">首頁</a>
 		  <a href="#" name="person_adoption.php">個人認養</a>
 		  <a href="#" name="mechanism_adoption.php">機構認養</a>
-		  <a href="#">遺失協尋</a>
-		  <a href="#">二手用品</a>
+		  <a href="#" name="Available_for_findpet.php">遺失協尋</a>
+		  <a href="#" name="Available_second_hand.php">二手用品</a>
 		</div>
 		
 		<div id="content">

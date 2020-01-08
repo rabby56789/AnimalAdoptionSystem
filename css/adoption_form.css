@@ -1,11 +1,17 @@
 
 body {
   margin: 0;
-  background-color: #ff7d89;
+  background-color: #fff9c7;
   font-family: Arial, Helvetica, sans-serif, Microsoft YaHei, Microsoft JhengHei, '微軟雅黑體', '微軟正黑體', '黑體';
 }
 
 .context {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+
+.context_left{
   position: absolute;
   left: 5%;
   top: 10%;
@@ -32,16 +38,41 @@ p {
   padding: 0px;
   margin: 0;
 }
+
+input[type=submit]{
+  background-color: #6effc4;
+  color: black;
+  padding: 1vw;
+  margin: 1vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 5vw;
+}
+
+input {
+	padding:8px;
+	border:0!important;
+	border-bottom:1px solid #ccc;
+}
+
+.radio {
+	padding:8px;
+	width:24px;
+	height:24px;
+	position:relative;
+	top:6px;
+}
 .img
 {
 	position:absolute;
-	left:50%;
+	left:75%;
 	top:20%;
 }
 .img img{
   object-fit: cover;
-  height: 30vw;
-  width: 30vw;
+  height: 20vw;
+  width: 20vw;
   border-radius: 20px;
   display:block;
   margin:auto;

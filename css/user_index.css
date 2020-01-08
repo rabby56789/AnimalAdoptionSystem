@@ -213,3 +213,25 @@ span.psw {
   height: 80vh;
   z-index: -1;
 }
+
+.dropdown {
+  
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  background-color: #0acc3e;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0vw 1.5vw;
+  z-index: 10;
+  transition: 0.5s linear;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+
+.dropdown_content:hover {
+	background-color: #02e88b;
+}
