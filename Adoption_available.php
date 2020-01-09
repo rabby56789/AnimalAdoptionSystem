@@ -24,8 +24,7 @@ foreach ($cursor as $document) {
 	//echo	'<p>地區：';print_r($doc['area']);echo'</p>';
 	//echo	'<p>是否開放認養：';print_r($doc['isAdopted']);echo'</p>';
 	//echo	'<p>_ID：';print_r($doc['_id']);echo'</p>';
-	echo	'<button type="button" onclick="location.href=';echo '\'';echo 'updata_Form_data.php?_id=';print_r($ID);echo '\'">修改</button>
-			 <button type="button" onclick="location.href=';echo '\'';echo 'delete_Form_data.php?_id=';print_r($ID);echo '\'">刪除</button>
+	echo	'<button type="button" onclick="location.href=';echo '\'';echo 'delete_Form_data.php?_id=';print_r($ID);echo '\'">刪除</button>
 		  </div>';
 	}
 }

@@ -50,6 +50,7 @@ body {
   margin: 10px;
   float: left;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .a_animal img{

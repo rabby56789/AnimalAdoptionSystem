@@ -13,6 +13,7 @@ foreach ($cursor as $document) {
 if($a==false)
 {	$_SESSION['account']=$_POST['account'];
 	$_SESSION['user_name']=$doc['user_name'];
+	$_SESSION['nName']=$doc['nName'];
 	$_SESSION['admin']=$admin;
 	if($admin=="True")//判斷是否為管理員
 	{header("refresh:0;url=admin.php");}

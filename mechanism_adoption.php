@@ -18,7 +18,7 @@
 					 <input class="radio" type="radio" value="M" name="gender">男
 					 <input class="radio" type="radio" value="F" name="gender">女
 					 <input class="radio" type="radio" value="N" name="gender">無法告知</p><br>
-			<p>動物類別: <br><select name="pet_type">
+			<p>動物類別:<br> <select name="pet_type">
 						 <option value="*">全選</option>
 						 <option value="狗">狗</option>
 						 <option value="貓">貓</option>

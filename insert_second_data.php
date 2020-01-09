@@ -1,5 +1,12 @@
 <?php
+session_start();
 //imgur API新增圖片之url
+if(empty($_SESSION['account']))
+{
+	echo '<script>alert("請先登入");</script>';
+	header("refresh:0;url=Available_second_hand.php");
+}
+else{
 $img=$_FILES['img'];
 if($img['name']=='')
 {  
@@ -25,18 +32,13 @@ else{
   $pms = json_decode($out,true);
   $url=$pms['data']['link'];
   var_dump($url);
-  if($url!="")
-  {
-   echo "<h2>Uploaded Without Any Problem</h2>";
-   echo "<img src='$url'/>";
-  }
-  else
+  if($url=="")
   {
    echo "<h2>There's a Problem</h2>";
    echo $pms['data']['error'];  
-  } 
+  }
  }
-session_start();
+
 $time=date("Y-m-d H:i:s");
 $manager = new MongoDB\Driver\Manager("mongodb+srv://maomao:maomao123@animal-axwfm.gcp.mongodb.net/test?retryWrites=true&w=majority");//設定連線
 $bulk = new MongoDB\Driver\BulkWrite; //設定寫入變數
@@ -49,5 +51,5 @@ $bulk->insert(['account' => $_SESSION['account'],//使用者登陸後儲存使�
 			   'img' => $url
 			   ]);
 $manager->executeBulkWrite('mydb.second',$bulk);//$manager->executeBulkWrite('寫入db.寫入資料表', $前面設的寫入變數);
-echo '<script>location.replace("user_second_hand.php");</script>';
+echo '<script>window.history.go(-2);</script>';}
 ?>

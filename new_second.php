@@ -11,13 +11,13 @@
 		</script>
 	</head>
 	<body>
-		<button class="back" onclick="javascript:history.back()">返回</button>
+		<button class="back_foranother" onclick="javascript:history.back()">返回</button>
 		<div class="context">
 			<form action="insert_second_data.php" enctype="multipart/form-data" method="post">
 				
 			<div class="title">二手用品</div>
 			<p>品項: <input type="text" name="item" required></p><br>
-			<p>介紹:<textarea type="text" cols="80" rows="20" name="information"></textarea></p><br>
+			<p>介紹:<br><textarea type="text" cols="40" rows="5" name="information"></textarea></p><br>
 			<p>地區:<input type="text"  name="area" ></p><br>
 			<p>聯絡方式:<input type="text" name="connection"></p><br>
 			<input name="img" size="35" type="file" required><br/>

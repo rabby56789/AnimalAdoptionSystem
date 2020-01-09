@@ -17,6 +17,7 @@
 			    <li><div name="user_adoption.php">認養</div></li>
 			    <li><div name="user_receive.php">收信夾</div></li>
 			    <li><div name="user_second_hand.php">二手用品</div></li>
+				<li><div name="sendToAdminView.php">聯絡客服</div></li>
 			    <span><li><div name="user_info.php">個人資料</div></li></span>
 			</ul>
 			<div id="content">

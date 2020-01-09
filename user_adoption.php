@@ -13,7 +13,7 @@
 	<body>
 		<div class="adoption_available">
 			<div class="adoption_operation">
-				<div class="adoption_operation_left"><h4>認養申請中</h4></div>
+				<div class="adoption_operation_left"><h4>認養申請中<span style="font-weight: lighter;"> ( 申請失敗會自動消失 )</span></h4></div>
 				<div class="adoption_operation_right">
 					
 				</div>

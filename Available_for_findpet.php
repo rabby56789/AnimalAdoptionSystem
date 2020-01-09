@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/person_adoption.css">
 <br>
 <div class="foster_operation_right">
-	<button class="filter_search" type="button" onclick="location.href='new_findpet.php'">新增</button>
+	<button class="new" type="button" onclick="location.href='new_findpet.php'">新增</button>
 </div>
 <?php  //遺失協尋
 session_start();
@@ -20,7 +20,7 @@ foreach ($cursor as $document) {
 	echo	'<img src="';print_r($doc['img']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
 	echo	'<p id="pet_id">姓名：';print_r($doc['pet_name']);echo'</p>';
 	echo	'<p>品種：';print_r($doc['pet_breed']);echo'</p>';
-	echo	'<p>特徵：';print_r($doc['pet_feature']);echo'</p>';
+	echo	'<p>特徵：<br>';print_r($doc['pet_feature']);echo'</p>';
 	echo	'<p>遺失地區：';print_r($doc['lost_area']);echo'</p>';
 	echo	'<p>聯絡方式：';print_r($doc['connection']);echo'</p>
 		  </div>';

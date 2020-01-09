@@ -158,7 +158,7 @@
 		?>
 		</div>
 		<script>
-				// Get the modal
+		// Get the modal
 		var modal = document.getElementById('login');
 
 		// When the user clicks anywhere outside of the modal, close it

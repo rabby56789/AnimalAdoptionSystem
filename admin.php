@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/admin.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="Shortcut Icon" type="image/x-icon" href="ui_img/cbpig-57hae-001.ico"/>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 		</script>
 	</head>
@@ -28,9 +29,9 @@
 		  {
 			echo '<div class="header_right dropdown">';
 			if($_SESSION['admin']=="False")
-			{echo '<h3>hi, <a style="color:#02e88b" href="user_index.php">';print_r($_SESSION['user_name']);echo '</a></h3>';}
+			{echo '<h3>hi, <a style="color:#02e88b" href="user_index.php">';print_r($_SESSION['nName']);echo '</a></h3>';}
 			else
-			{echo '<h3>hi, <a style="color:#02e88b" href="admin.php">';print_r($_SESSION['user_name']);echo '</a>管理員</h3>';}
+			{echo '<h3>hi, <a style="color:#02e88b" href="admin.php">';print_r($_SESSION['nName']);echo '</a>管理員</h3>';}
 			echo '<div class="dropdown_content">';
 			echo '<a href="logout.php"><h3>登出</h3></a>';
 			echo '</div>';
@@ -50,7 +51,7 @@
 		      <label for="psd"><b>密碼:</b></label>
 		      <input type="password" placeholder="輸入密碼" name="psd" required>
 		      <button type="submit" >登入</button>
-			  <p>沒有帳戶嗎？點<a href="#" name="user_register.php">這裡</a>註冊新帳戶</p>
+			  <p>沒有帳戶嗎？點<a href="#" name="create_account.php">這裡</a>註冊新帳戶</p>
 		    </div>
 		  </form>
 		</div>
@@ -60,7 +61,11 @@
 		  <a href="#" name="new_announcement_info.php">新增公告</a>
 		  <a href="#" name="admin_user.php">會員管理</a>
 		  <a href="#" name="admin_pet.php">動物管理</a>
+		  <a href="#" name="admin_adoption_form_View.php">紀錄查詢</a>
+		  <a href="#" name="admin_findpet.php">遺失管理</a>
+		  <a href="#" name="admin_second.php">二手管理</a>
 		  <a href="#" name="new_message_info.php">系統信件</a>
+		  <a href="#" name="showAdminMail.php">客服信件</a>
 		</div>
 
 		<div id="content">

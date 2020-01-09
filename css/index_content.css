@@ -1,7 +1,165 @@
 
 body {
   margin: 0;
-  background-color: #fff9c7;
-  font-family: Arial, Helvetica, sans-serif, Microsoft YaHei, Microsoft JhengHei, '微軟雅黑體', '微軟正黑體', '黑體';;
+  background-image: url("dog-cat-kawaii-background.jpg");
+  background-color: hsla(0,0%,100%,0.80);
+  background-blend-mode: overlay;
+  background-repeat: repeat;
+  font-family: Arial, Helvetica, sans-serif, Microsoft YaHei, Microsoft JhengHei, '微軟雅黑體', '微軟正黑體', '黑體';
+}
+
+.context {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  background-color: #a1ffd9;
+  padding: 0.5vw 2vw;
+  margin: 1vw;
+  border: 5px solid #02e88b;
+  cursor: pointer;
+  border-radius: 2vw;
+  width: 25vw;
+  font-size: 1vw;
+}
+
+.context_button{
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+
+.context_left{
+  position: absolute;
+  left: 6%;
+  top: 40%;
+}
+
+.context_chat{
+  position: absolute;
+  left: 50%;
+  top: 40%;
+}
+
+.context_button button{
+  color:white;
+  background-color: #ffae6b;
+  padding: 2vw 5vw;
+  margin: 1vw;
+  border: 5px solid #ff7d89;
+  cursor: pointer;
+  border-radius: 20vw;
+  font-size: 2vw;
+  font-weight:bold;
+  transition-duration: 0.4s;
+}
+
+.context_button button:hover{
+  background-color: #ff7d89;
+  color: white;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.container {
+  padding: 16px;
+}
+
+.container p {
+	text-align: center;
+	font-size: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+.mark{
+	font-size: 1.3vw;
+	text-align:center;
+}
+
+.find{
+	object-fit: cover;
+	height: 30vw;
+    width: 30vw;
 }
 

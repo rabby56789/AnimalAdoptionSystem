@@ -61,14 +61,14 @@
 				{$num=$num+1;}//計算筆數
 				$data_nums=$num;//全筆數SESSION好廢XD只會用全域嗚嗚嗚
 				
-				$per=10;//每頁顯示項目數量
+				$per=15;//每頁顯示項目數量
 				$pages = ceil($data_nums/$per); //取得不小於值的下一個整數
 				if (!isset($_GET["page"]))//假如$_GET["page"]未設置
 				{$page=1;/*則在此設定起始頁數*/}
 				else 
 				{$page = intval($_GET["page"]); /*確認頁數只能夠是數值資料*/}
-				$options = ['sort' =>['add_time' => 1],'limit'=>$per,'skip'=>($per*$page)-10,];//排順序先PO的先上
-				$query = new MongoDB\Driver\Query($filter);//設定查詢變數
+				$options = ['sort' =>['add_time' => 1],'limit'=>$per,'skip'=>($per*$page)-15,];//排順序先PO的先上
+				$query = new MongoDB\Driver\Query($filter,$options);//設定查詢變數
 				$cursor = $manager->executeQuery('mydb.Userinfo', $query);//設定指標變數:查詢變數指向哪個db哪個collection
 				
 				//顯示查詢資料
@@ -82,7 +82,7 @@
 					echo	'<p>匿名：';print_r($doc['nName']);echo'</p>';
 					echo	'<p>性別：';print_r($doc['gender']);echo'</p>';
 					echo	'<p>身分證：';print_r($doc['IDNumber']);echo'</p>';
-					echo	'<p>帳號：';print_r($doc['account']);echo'</p>';
+					echo	'<p>帳號：<br>';print_r($doc['account']);echo'</p>';
 					echo	'<p>密碼：';print_r($doc['psd']);echo'</p>';
 					echo	'<p>地址：';print_r($doc['address']);echo'</p>';
 					echo	'<p>電話：';print_r($doc['phone']);echo'</p>';
@@ -103,7 +103,7 @@
 			echo "第 ";
 			for( $i=1 ; $i<=$pages ; $i++ )
 			{
-				if ( $page-3 < $i && $i < $page+3 )
+				if ( $page-2 < $i && $i < $page+2 )
 				{echo "<a href=?page=".$i.">".$i."</a> ";}
 			}
 		}

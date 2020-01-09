@@ -144,6 +144,7 @@
 				if ( $page-3 < $i && $i < $page+3 )
 				{echo "<a href=?page=".$i.">".$i."</a> ";}
 			}
+			echo "頁 ";
 		}
 		else//有搜尋結果之分頁顯示
 		{
@@ -154,11 +155,12 @@
 				if ( $page-3 < $i && $i < $page+3 )
 				{echo "<a href=?page=".$i."&gender=".$gender."&pet_type=".$pet_type."&pet_name=".$pet_name."&area=".$area.">".$i."</a> ";}
 			}
+			echo "頁 ";
 		}	
 		?>
 		</div>
 		<script>
-				// Get the modal
+		// Get the modal
 		var modal = document.getElementById('login');
 
 		// When the user clicks anywhere outside of the modal, close it

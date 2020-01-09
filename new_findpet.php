@@ -11,14 +11,14 @@
 		</script>
 	</head>
 	<body>
-		<button class="back" onclick="javascript:history.back()">返回</button>
+		<button class="back_foranother" onclick="javascript:history.back()">返回</button>
 		<div class="context">
 			<form action="insert_findpet_data.php" enctype="multipart/form-data" method="post">
 				
 			<div class="title">動物基本資料</div>
 			<p>動物姓名: <input type="text" name="pet_name" required></p><br>
 			<p>動物品種:<input type="text" name="pet_breed" required></p><br>
-			<p>動物特徵:<textarea type="text" cols="80" rows="20" name="pet_feature"></textarea></p><br>
+			<p>動物特徵:<br><textarea type="text" cols="40" rows="5" name="pet_feature"></textarea></p><br>
 			<p>遺失地區:<input type="text"  name="lost_area" ></p><br>
 			<p>聯絡方式:<input type="text" name="connection"></p><br>
 			<input name="img" size="35" type="file" required><br/>

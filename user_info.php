@@ -12,13 +12,16 @@
 	</head>
 	<body>
 		<div class="context">
-			<div class="title">個人基本資料</div>
+		<!--edit user info-->
+		<form action="edit_userInfo.php" method="post">
+			<div class="title">個人基本資料<input type="submit" name="editUserInfo" value="EDIT"/></div>
 			<p>姓名:<?php print_r($doc['user_name'])?></p><br>
 			<p>電子郵件:<?php print_r($doc['account'])?></p><br>
 			<p>地址:<?php print_r($doc['address'])?></p><br>
 			<p>電話:<?php print_r($doc['phone'])?></p><br>
 			<p>性別:<?php print_r($doc['gender'])?></p><br>
 			<p>身分證字號:<?php print_r($doc['IDNumber'])?></p><br>
+		</form>
 		</div>
 	</body>
 </html>

@@ -15,15 +15,15 @@
 		<div class="context">
 			<form action="insert_Userinfo_data.php" method="post">	
 			<div class="title">個人基本資料</div>
+			<p>帳號(Email): <input type="hidden" name="account"><?php  session_start(); echo $_SESSION['confirm_account'];?></p><br>
 			<p>姓名: <input type="text" name="user_name" required></p><br>
 			<p>匿名: <input type="text" name="nName" required></p><br>
 			<p>性別：<input class="radio" type="radio" value="男" name="gender">男<input class="radio" type="radio" value="女" name="gender" checked>女
 			<p>身分證字號: <input type="text" name="IDNumber" required></p><br>
-			<p>帳號(Email): <input type="email" name="account" required></p><br>
 			<p>密碼: <input type="password" name="psd" required></p><br>
 			<p>住址: <input type="text" name="address" required></p><br>
 			<p>電話: <input type="text" name="phone" required></p><br>
-			<button  class="submit">送出</button>
+			<button class="submit">送出</button>
 			</form>
 		</div>
 

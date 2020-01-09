@@ -5,6 +5,7 @@ $bulk = new MongoDB\Driver\BulkWrite; //設定寫入變數
 if(empty($_SESSION['account']))
 {
 	echo '<script>alert("請先登入");</script>';
+	header("refresh:0;url=index.php");
 }
 else
 {

@@ -7,5 +7,5 @@ $bulk->delete(['_id' => ['$eq' => new MongoDB\BSON\ObjectId("$mongoid")]]);//寫
 			   
 $manager->executeBulkWrite('mydb.second', $bulk);//$manager->executeBulkWrite('寫入db.寫入資料表', $前面設的寫入變數);
 
-echo '<script>location.replace("user_second_hand.php");</script>';
+echo '<script>window.history.go(-1);</script>';
 ?>

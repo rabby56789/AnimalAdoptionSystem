@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/user_index.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="Shortcut Icon" type="image/x-icon" href="ui_img/cbpig-57hae-001.ico"/>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 		</script>
 	</head>
@@ -17,7 +18,7 @@
 		  	<h2>動物認養系統</h2>
 		  </div>
 		</a>
-		<?php 
+		  <?php 
 		  session_start();
 		  if(empty($_SESSION['account']))//未登入顯示登入鈕
 		  {
@@ -29,18 +30,18 @@
 		  {
 			echo '<div class="header_right dropdown">';
 			if($_SESSION['admin']=="False")
-			{echo '<h3>hi, <a style="color:#02e88b" href="user_index.php">';print_r($_SESSION['user_name']);echo '</a></h3>';}
+			{echo '<h3>hi, <a style="color:#02e88b" href="user_index.php">';print_r($_SESSION['nName']);echo '</a></h3>';}
 			else
-			{echo '<h3>hi, <a style="color:#02e88b" href="admin.php">';print_r($_SESSION['user_name']);echo '</a></h3>';}
+			{echo '<h3>hi, <a style="color:#02e88b" href="admin.php">';print_r($_SESSION['nName']);echo '</a></h3>';}
 			echo '<div class="dropdown_content">';
 			echo '<a href="logout.php"><h3>登出</h3></a>';
 			echo '</div>';
 			echo '</div>';
 		  }
-		?>
-		</div>
+		  ?>
+		  </div>
 		  
-		<div id="login" class="modal">
+		  <div id="login" class="modal">
 		  <form class="modal-content animate" action="login_decide.php" method="post">
 		    <div class="imgcontainer">
 		      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -51,11 +52,11 @@
 		      <label for="psd"><b>密碼:</b></label>
 		      <input type="password" placeholder="輸入密碼" name="psd" required>
 		      <button type="submit" >登入</button>
-			  <p>沒有帳戶嗎？點<a href="#" name="user_register.php">這裡</a>註冊新帳戶</p>
+			  <p>沒有帳戶嗎？點<a href="#" name="create_account.php">這裡</a>註冊新帳戶</p>
 		    </div>
 		  </form>
 		</div>
-
+		
 		<div id="navbar" class="navbar">
 		  <a class="active" href="#" name="index_content.php">首頁</a>
 		  <a href="#" name="person_adoption.php">個人認養</a>
@@ -63,7 +64,7 @@
 		  <a href="#" name="Available_for_findpet.php">遺失協尋</a>
 		  <a href="#" name="Available_second_hand.php">二手用品</a>
 		</div>
-		
+
 		<div id="content">
 			<iframe src="user_index_content.php"></iframe>
 		</div>

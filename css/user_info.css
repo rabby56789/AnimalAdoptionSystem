@@ -21,3 +21,31 @@ p {
   padding: 0px;
   margin: 0;
 }
+
+input[type=submit]{
+  background-color: #6effc4;
+  color: black;
+  padding: 1vw;
+  margin: 1vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 5vw;
+}
+
+.submit{
+  background-color: #6effc4;
+  color: black;
+  padding: 1vw;
+  margin: 1vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 8vw;
+}
+
+input {
+	padding:8px;
+	border:0!important;
+	border-bottom:1px solid #ccc;
+}

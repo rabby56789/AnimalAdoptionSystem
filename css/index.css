@@ -10,6 +10,7 @@ body {
   padding: 0vw;
   width: 100%;
   overflow: hidden;
+  height: 15vh;
 }
 
 .header_left{
@@ -102,7 +103,7 @@ span.psw {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 11; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -184,7 +185,7 @@ span.psw {
   transition: 0.5s linear;
 }
 
-/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
@@ -194,7 +195,7 @@ span.psw {
     text-align: center; /* If you want the text to be left-aligned on small screens */
   }
 }
-
+ */
 .navbar a:hover {
   color: black;
   background-color: #24ffa6;
@@ -223,7 +224,7 @@ span.psw {
   position: absolute;
   background-color: #0acc3e;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 0vw 1.5vw;
+  margin: 0vw 1vw;
   z-index: 10;
   transition: 0.5s linear;
 }

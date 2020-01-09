@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/person_adoption.css">
 <br>
 <div class="foster_operation_right">
-	<button class="filter_search" type="button" onclick="location.href='new_second.php'">新增</button>
+	<button class="new" type="button" onclick="location.href='new_second.php'">新增</button>
 </div>
 <?php  
 session_start();
@@ -19,7 +19,7 @@ foreach ($cursor as $document) {
 	echo '<div class="a_animal">';
 	echo	'<img src="';print_r($doc['img']);echo '" alt="no image" onerror=this.src="ui_img/no_image.png"></a>';
 	echo	'<p id="pet_id">品項：';print_r($doc['item']);echo'</p>';
-	echo	'<p>介紹：';print_r($doc['information']);echo'</p>';
+	echo	'<p>介紹：<br>';print_r($doc['information']);echo'</p>';
 	echo	'<p>地區：';print_r($doc['area']);echo'</p>';
 	echo	'<p>聯絡方式：';print_r($doc['connection']);echo'</p>
 		  </div>';

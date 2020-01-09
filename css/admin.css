@@ -2,7 +2,7 @@
 body {
   margin: 0;
   background-color: #fff9c7;
-  font-family: Arial, Helvetica, sans-serif, Microsoft YaHei, Microsoft JhengHei, '微軟雅黑體', '微軟正黑體', '黑體';;
+  font-family: Arial, Helvetica, sans-serif, Microsoft YaHei, Microsoft JhengHei, '微軟雅黑體', '微軟正黑體', '黑體';
 }
 
 .header {
@@ -10,6 +10,7 @@ body {
   padding: 0vw;
   width: 100%;
   overflow: hidden;
+  height: 15vh;
 }
 
 .header_left{
@@ -177,14 +178,14 @@ span.psw {
   display: block;
   color: black;
   text-align: center;
-  width: 10vw;
+  width: 8vw;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
   transition: 0.5s linear;
 }
 
-/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other 
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
@@ -194,7 +195,7 @@ span.psw {
     text-align: center; /* If you want the text to be left-aligned on small screens */
   }
 }
-
+*/
 .navbar a:hover {
   color: black;
   background-color: #24ffa6;
@@ -223,7 +224,7 @@ span.psw {
   position: absolute;
   background-color: #0acc3e;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 0vw 1.5vw;
+  margin: 0vw 1vw;
   z-index: 10;
   transition: 0.5s linear;
 }
